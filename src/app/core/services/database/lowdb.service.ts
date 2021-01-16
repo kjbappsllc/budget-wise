@@ -25,8 +25,20 @@ export class LowDBService {
                 .write();
         }
     }
-    
+
     public getBudgets(): Budget [] {
         return this.db.get('budgets').value();
+    }
+
+    public getBudgetById(id: string): Budget {
+        return this.db.get('budgets')
+            .find({ id })
+            .value();
+    }
+
+    public addBudget(budget: Budget) {
+        this.db.get('budgets')
+            .push(budget)
+            .write();
     }
 }

@@ -1,11 +1,10 @@
 {
-  "name": "angular-electron",
+  "name": "budget-wise",
   "version": "9.0.3",
-  "description": "Angular 11 with Electron (Typescript + SASS + Hot Reload)",
-  "homepage": "https://github.com/maximegris/angular-electron",
+  "description": "Budget Application using Angular 11 with Electron (Typescript + SASS + Hot Reload)",
+  "homepage": "https://github.com/kjbappsllc/budget-wise",
   "author": {
-    "name": "Maxime GRIS",
-    "email": "maxime.gris@gmail.com"
+    "name": "Keyshawn Butts"
   },
   "keywords": [
     "angular",
@@ -41,7 +40,8 @@
     "lint": "ng lint"
   },
   "dependencies": {
-    "lowdb": "1.0.0"
+    "lowdb": "1.0.0",
+    "uuid": "8.3.2"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "10.0.1",
