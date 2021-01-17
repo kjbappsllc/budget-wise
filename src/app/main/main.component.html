@@ -1,6 +1,12 @@
-<div>
-  <h1 class="title">
-    {{ 'home.title' | translate }}
-  </h1>
-  <button (click)="onAddBudgetClicked()">Add Budget</button>
+<div id="container">
+  <div class="side-nav primary-color-bg">
+    <span class="title-text">Budget Wise</span>
+    <ul>
+      <li><a routerLink="/budget">Budget</a></li>
+      <li><a routerLink="/reports">Reports</a></li>
+    </ul>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
 </div>

@@ -1,13 +1,13 @@
-import { v4 } from 'uuid';
+import { IdInject } from './decorators'
 
+@IdInject
 export class Budget {
+    id: string
     name: string;
     paycheck: number;
-    id: string;
 
     constructor(name: string, paycheck: number) {
         this.name = name;
         this.paycheck = paycheck;
-        this.id = v4();
     }
 }

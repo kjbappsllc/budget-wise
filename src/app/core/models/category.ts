@@ -1,16 +1,16 @@
-import { v4 } from "uuid";
+import { IdInject } from './decorators'
 
+@IdInject
 export class Category {
-    budgetId: string;
-    id: string;
+    id: string
+    groupId: string;
     name: string;
     budgetedAmt: number;
     currentAmt: number;
 
-    public constructor(budgetId: string, name: string) {
-        this.budgetId = budgetId;
+    public constructor(group: string, name: string) {
+        this.groupId = group;
         this.name = name;
-        this.id = v4();
         this.budgetedAmt = 0;
         this.currentAmt = 0;
     }

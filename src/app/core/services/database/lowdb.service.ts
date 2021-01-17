@@ -5,6 +5,7 @@ import * as FileSync from 'lowdb/adapters/FileSync';
 import { LowdbSync } from 'lowdb';
 import { defaultSchema, DatabaseSchema } from './db.schema'
 import { Budget } from '../../models/budget';
+import { CategoryGroup } from '../../models/group';
 
 @Injectable({
     providedIn: 'root'
@@ -40,5 +41,10 @@ export class LowDBService {
         this.db.get('budgets')
             .push(budget)
             .write();
+    }
+
+    public getGroups(): CategoryGroup [] {
+        return this.db.get('groups')
+            .value();
     }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LowDBService } from '../core/services';
-import { v4 } from 'uuid'
+import { CategoryGroup } from '../core/models/group';
 
 @Component({
   selector: 'app-main',
@@ -16,8 +16,4 @@ export class MainComponent implements OnInit {
   ) {}
 
   ngOnInit(): void { }
-
-  public onAddBudgetClicked() {
-    console.log('Add Budget Clicked')
-  }
 }
