@@ -1,6 +1,13 @@
+import { v4 } from 'uuid';
 
-export interface Budget {
+export class Budget {
     name: string;
-    id: string;
     paycheck: number;
+    id: string;
+
+    constructor(name: string, paycheck: number) {
+        this.name = name;
+        this.paycheck = paycheck;
+        this.id = v4();
+    }
 }
