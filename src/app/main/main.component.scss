@@ -11,9 +11,36 @@
     flex: 1;
 
     .side-nav {
-        min-width: 250px;
+        bottom: 0;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        transition: all .2s ease;
         display: flex;
         flex-direction: column;
+    }
+
+    .side-nav-expand {
+        width: 280px;
+
+        .logo-container {
+            border-bottom: 1px solid rgba(0,0,0,.0625);
+            padding: 0 20px;
+        }
+    }
+
+    .side-nav-collapse {
+        width: 70px;
+
+        .logo-container {
+            border-bottom: 1px solid transparent;
+            padding: 0;
+        }
+    }
+
+    .side-nav-hidden {
+        width: 0px;
     }
 
     .title-text {
