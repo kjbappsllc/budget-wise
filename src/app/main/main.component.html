@@ -1,12 +1,27 @@
 <div id="container">
   <div class="primary-color-bg side-nav" [ngClass]="{
-    'side-nav-expand': !sideBarCollapsed && !sideBarHidden,
-    'side-nav-collapse': sideBarCollapsed && !sideBarHidden,
-    'side-nav-hidden': !sideBarCollapsed && sideBarHidden
+    'expand': !sideBarCollapsed && !sideBarHidden,
+    'collapse': sideBarCollapsed && !sideBarHidden,
+    'hidden': !sideBarCollapsed && sideBarHidden
   }">
-    <div class="logo-container"></div>
+    <div class="logo-container">
+      <img class="logo" src="assets/images/logo.png" />
+      <span class="logo-text">Budget Wise</span>
+    </div>
+    <ul class="side-bar-menu">
+      <li class="menu-item" *ngFor="let row of menuItems">
+        <a routerLink="{{row.routerLink}}">
+          <mat-icon class="icon" aria-hidden="false">{{row.icon}}</mat-icon>
+          <span class="text">{{row.label}}</span>
+        </a>
+      </li>
+    </ul>
   </div>
-  <div>
+  <div class="content" [ngClass]="{
+    'expand': !sideBarCollapsed && !sideBarHidden,
+    'collapse': sideBarCollapsed && !sideBarHidden,
+    'hidden': !sideBarCollapsed && sideBarHidden
+  }">
     <router-outlet></router-outlet>
   </div>
 </div>

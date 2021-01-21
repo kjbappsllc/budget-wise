@@ -2,11 +2,23 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main.component';
+import { BudgetComponent } from './budget/budget.component'
+import { PageNotFoundComponent } from '../shared/components';
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: MainComponent
+    path: '',
+    component: MainComponent,
+    children: [
+      {
+        path: 'budget',
+        component: BudgetComponent
+      },
+      {
+        path: '**',
+        component: PageNotFoundComponent
+      }
+    ]
   }
 ];
 

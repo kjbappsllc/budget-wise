@@ -3,6 +3,12 @@ import { Router } from '@angular/router';
 import { LowDBService } from '../core/services';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout'
 
+interface SideBarMenuItem {
+  readonly label: string;
+  readonly icon: string;
+  readonly routerLink: string;
+}
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -12,6 +18,10 @@ export class MainComponent implements OnInit {
 
   public sideBarCollapsed: boolean;
   public sideBarHidden: boolean;
+  public menuItems: SideBarMenuItem [] = [
+    { label: "Budgets", icon: "attach_money", routerLink: "budget" },
+    { label: "Reports", icon: "bar_chart", routerLink: "report" }
+  ]
 
   constructor(
     private db: LowDBService,
@@ -28,7 +38,6 @@ export class MainComponent implements OnInit {
     this.breakpointObs
       .observe([defaultCollapsedQuery, defaultHiddenQuery])
       .subscribe((state: BreakpointState) => {
-        console.log(state);
         if (state.breakpoints[defaultCollapsedQuery]) {
           this.sideBarCollapsed = true;
           this.sideBarHidden = false;
